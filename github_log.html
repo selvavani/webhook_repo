@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Github Logs</title>
+	<style>
+		
+		body
+		{
+			background-image: url("{{ url_for('static', filename='website.jpeg') }}");
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+		}
+	</style>
+</head>
+<body>
+
+	<table border="5">
+		<thead>
+			<th><b>User name</b></th>
+			<th><b>Request ID</b></th>
+			<th><b>Action performed</b></th>
+			<th><b>From branch</b></th>
+			<th><b>To branch</b></th>
+			<th><b>Time </b></th>
+		</thead>
+		{% for i in github_log%}
+		<tr>
+			<td>{{ i["user"] }}</td>
+			<td>{{ i["req_id"] }}</td>
+			<td>{{ i["user_action"] }}</td>
+			<td>{{ i["from_branch"] }}</td>
+			<td>{{ i["to_branch"] }}</td>
+			<td>{{ i["timestamp"] }}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>
+
+
+
+
+
+
+</body>
+</html>
